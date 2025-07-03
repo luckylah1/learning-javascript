@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Login Page</title>
+    <link rel="stylesheet" type="text/css" href="stylee.css">
+</head>
+<body>
+    <p>Welcome. Please login</p>
+    
+    <form>
+        <label for="usernameInput">Username:</label>
+        <input type="text" id="usernameInput"/><br/>
+        
+        <label for="passwordInput">Password:</label>
+        <input type="password" id="passwordInput"/>
+        
+        <p id="message"></p>
+        <br/><br/>
+        
+        <button type="button" onclick="verifyUser()">Log in</button>
+    </form>
+
+    <script>
+        function verifyUser(){
+            var username = document.getElementById("usernameInput").value;
+            var password = document.getElementById("passwordInput").value;
+
+            checkUsernameCreds(username, password);
+        }
+
+        function checkUsernameCreds(username, password){
+            var systemUsername = "Bond";
+            var systemPassword = "007";
+
+            if(username === systemUsername && password === systemPassword){
+                document.getElementById("message").innerHTML = "Logging you in ...";
+            } else {
+                document.getElementById("message").innerHTML = "Invalid credentials!";
+            }
+        }
+    </script>
+</body>
+</html>
